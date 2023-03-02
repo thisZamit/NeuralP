@@ -1,4 +1,13 @@
+import subprocess
+import sys
+
 print('hellow')
-import pandas as pd
-print('something new')
-print('something from github')
+
+
+try:
+    import pandas as pd
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'pandas'])
+finally:
+    import pandas as pd
+    
